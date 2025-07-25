@@ -94,7 +94,7 @@ export function ProductList({ category }: Prop) {
           >
             {categoryList.map((product) => (
               <div className="keen-slider__slide" key={product.id}>
-                <ProductCard product={product} category={category} />
+                <ProductCard product={product} />
               </div>
             ))}
           </div>
