@@ -261,12 +261,12 @@ export function OrderForm() {
       </div>
 
       <div>
-        <Card className="sticky top-4 w-96 ">
+        <Card className="sticky top-4 sm:w-40 md:w-96 ">
           <CardHeader>
             <CardTitle>Resumo do Pedido</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 ">
-            <div className="flex items-center w-[358px] flex-col h-48 overflow-auto overflow-x-hidden">
+            <div className="flex items-center w-[300px] md:w-[358px] flex-col h-48 overflow-auto overflow-x-hidden">
               {cartItems.map((item) => (
                 <div
                   key={item.product.id}

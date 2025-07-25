@@ -8,13 +8,12 @@ import categoryLabel from "@/utils/categoryLabel";
 
 import { ProductCard } from "@/components/layout";
 
-import { ArrowLeft, Filter, X } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
 
 type Products = Record<string, Product[]>;
 
@@ -200,23 +199,10 @@ export function ItemCategoryList({ category, productList }: Props) {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col justify-center items-center lg:flex-row gap-8">
         <div className="lg:w-1/4">
-          <div className="lg:hidden mb-4">
-            <Button variant="outline" className="w-full">
-              <Filter className="h-4 w-4 mr-2" />
-              Filtros
-              {filterState.filtersClicked.length > 0 &&
-                filterState.filtersClicked.map((item, index) => (
-                  <Badge key={index} className="ml-2" variant="secondary">
-                    {item}
-                  </Badge>
-                ))}
-            </Button>
-          </div>
-
           {/* Filtros mapeados */}
-          <Card className="block w-[350px] h-[400px] overflow-y-auto ">
+          <Card className="block w-[200px] md:w-[350px] md:h-[400px] overflow-y-auto ">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold ">Filtros</h2>

@@ -57,7 +57,7 @@ export function Header({ filterProductsByName }: Props) {
                   value={term}
                   autoFocus
                   onChange={(e) => handleWordChange(e)}
-                  className="bg-gray-200 selection:bg-primary shadow-xs hover:bg-gray-300 text-primary focus:w-xs transition-all"
+                  className="bg-gray-200 hidden md:block selection:bg-primary shadow-xs hover:bg-gray-300 text-primary focus:w-xs w-12 md:w-40 transition-all"
                   placeholder="🔍 Buscar..."
                 />
               ) : (
