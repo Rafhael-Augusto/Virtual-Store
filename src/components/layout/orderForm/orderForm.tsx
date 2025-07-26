@@ -4,6 +4,7 @@ import type React from "react";
 import { useState } from "react";
 
 import { useAppStore } from "@/store/useAppStore";
+import TotalPayment from "@/utils/totalPayment";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -27,6 +28,8 @@ export function OrderForm() {
   const router = useRouter();
 
   const cartItems = Object.values(useAppStore((state) => state.cart));
+  const { totalPayment } = TotalPayment();
+
   const [isProcessing, setIsProcessing] = useState(false);
 
   const handleSubmits = async (e: React.FormEvent) => {
@@ -226,13 +229,19 @@ export function OrderForm() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="1">
-                      1x de R$ 1.299,99 sem juros
+                      1x de R$ {totalPayment()} sem juros
                     </SelectItem>
-                    <SelectItem value="2">2x de R$ 649,99 sem juros</SelectItem>
-                    <SelectItem value="3">3x de R$ 433,33 sem juros</SelectItem>
-                    <SelectItem value="6">6x de R$ 216,66 sem juros</SelectItem>
+                    <SelectItem value="2">
+                      2x de R$ {totalPayment(2)} sem juros
+                    </SelectItem>
+                    <SelectItem value="3">
+                      3x de R$ {totalPayment(3)} sem juros
+                    </SelectItem>
+                    <SelectItem value="6">
+                      6x de R$ {totalPayment(6)} sem juros
+                    </SelectItem>
                     <SelectItem value="12">
-                      12x de R$ 119,16 com juros
+                      12x de R$ {totalPayment(12)} sem juros
                     </SelectItem>
                   </SelectContent>
                 </Select>

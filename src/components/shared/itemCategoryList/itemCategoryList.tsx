@@ -199,7 +199,7 @@ export function ItemCategoryList({ category, productList }: Props) {
         </p>
       </div>
 
-      <div className="flex flex-col justify-center items-center lg:flex-row gap-8">
+      <div className="flex flex-col justify-center items-center md:items-start lg:flex-row gap-8">
         <div className="lg:w-1/4">
           {/* Filtros mapeados */}
           <Card className="block w-[200px] md:w-[350px] md:h-[400px] overflow-y-auto ">
